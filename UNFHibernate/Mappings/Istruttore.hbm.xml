@@ -1,0 +1,28 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<hibernate-mapping xmlns="urn:nhibernate-mapping-2.2" assembly="UNFHibernate" namespace="UNFHibernate.Domain">
+  <class name="UNFHibernate.Domain.Istruttore">
+    <id name="ID">
+      <generator class="guid" />
+    </id>
+    <property name="Nome" />
+    <property name="Cognome" />
+    <property name="DataNascita" />
+    <property name="LuogoNascita" />
+    <property name="Indirizzo" />
+    <property name="Comune" />
+    <property name="CAP" />
+    <property name="Provincia" />
+    <property name="CodiceFiscale" />
+    <property name="NumeroTelefono" />
+    <property name="NumeroCellulare" />
+    <property name="Email" />
+    <property name="Note" />
+    <property name="Male" />
+
+    <bag name="Corsi">
+      <key column="ID" />
+      <many-to-many class="Corso"/>
+    </bag>
+    
+  </class>
+</hibernate-mapping>

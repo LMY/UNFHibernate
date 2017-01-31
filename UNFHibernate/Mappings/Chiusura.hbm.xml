@@ -1,0 +1,13 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<hibernate-mapping xmlns="urn:nhibernate-mapping-2.2" assembly="UNFHibernate" namespace="UNFHibernate.Domain">
+  <class name="UNFHibernate.Domain.Chiusura">
+    <id name="ID">
+      <generator class="guid" />
+    </id>
+    <property name="Descrizione" />
+    <property name="DataInizio" />
+    <property name="DataFine" />
+
+    <many-to-one name="stagione" column="stagioneID" not-null="true" />
+  </class>
+</hibernate-mapping>

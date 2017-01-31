@@ -1,0 +1,38 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<hibernate-mapping xmlns="urn:nhibernate-mapping-2.2" assembly="UNFHibernate" namespace="UNFHibernate.Domain">
+  <class name="UNFHibernate.Domain.Iscrizione">
+    <id name="ID">
+      <generator class="guid" />
+    </id>
+
+    <many-to-one name="persona" column="personaID" not-null="true" />
+    <many-to-one name="corso" column="corsoID" not-null="true" />
+
+    <property name="data_iscrizione" />
+
+    <property name="Saldato" />
+
+    <property name="data_inizio" />
+    <property name="ingressi" />
+    
+    <property name="data_socio" />
+    <property name="tesseran" />
+    <property name="data_certificato" />
+    <property name="data_rinuncia" />
+    <property name="tassa_iscrizione" />
+
+    <property name="importo" />
+
+    <property name="primopagamento_data" />
+    <property name="primopagamento_modalita" />
+    <property name="primopagamento_importo" />
+
+    <property name="secondopagamento_data" />
+    <property name="secondopagamento_modalita" />
+    <property name="secondopagamento_importo" />
+
+    <property name="terzopagamento_data" />
+    <property name="terzopagamento_modalita" />
+    <property name="terzopagamento_importo" />
+  </class>
+</hibernate-mapping>

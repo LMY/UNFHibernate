@@ -1,0 +1,16 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<hibernate-mapping xmlns="urn:nhibernate-mapping-2.2" assembly="UNFHibernate" namespace="UNFHibernate.Domain">
+  <class name="UNFHibernate.Domain.PersonaGenitore">
+    <id name="ID">
+      <generator class="foreign">
+        <param name="property">Figlio</param>
+      </generator>
+    </id>
+    <property name="Nome" />
+    <property name="Cognome" />
+    <property name="DataNascita" />
+    <property name="LuogoNascita" />
+    
+    <one-to-one class="Persona" name="Figlio" />
+  </class>
+</hibernate-mapping>

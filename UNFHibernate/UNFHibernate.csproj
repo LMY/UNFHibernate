@@ -1,0 +1,334 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{5194A913-34DC-46CC-AAE8-C8758307F62E}</ProjectGuid>
+    <OutputType>WinExe</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>UNFHibernate</RootNamespace>
+    <AssemblyName>UNFHibernate</AssemblyName>
+    <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <PublishUrl>publish\</PublishUrl>
+    <Install>true</Install>
+    <InstallFrom>Disk</InstallFrom>
+    <UpdateEnabled>false</UpdateEnabled>
+    <UpdateMode>Foreground</UpdateMode>
+    <UpdateInterval>7</UpdateInterval>
+    <UpdateIntervalUnits>Days</UpdateIntervalUnits>
+    <UpdatePeriodically>false</UpdatePeriodically>
+    <UpdateRequired>false</UpdateRequired>
+    <MapFileExtensions>true</MapFileExtensions>
+    <ApplicationRevision>0</ApplicationRevision>
+    <ApplicationVersion>1.0.0.%2a</ApplicationVersion>
+    <IsWebBootstrapper>false</IsWebBootstrapper>
+    <UseApplicationTrust>false</UseApplicationTrust>
+    <BootstrapperEnabled>true</BootstrapperEnabled>
+    <TargetFrameworkProfile />
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <PlatformTarget>x86</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <PlatformTarget>x86</PlatformTarget>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup>
+    <ApplicationIcon>icon_shark.ico</ApplicationIcon>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="EntityFramework">
+      <HintPath>..\packages\EntityFramework.5.0.0\lib\net45\EntityFramework.dll</HintPath>
+    </Reference>
+    <Reference Include="Iesi.Collections, Version=1.0.1.0, Culture=neutral, PublicKeyToken=aa95f207798dfdb4, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\packages\Iesi.Collections.3.2.0.4000\lib\Net35\Iesi.Collections.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Office.Interop.Word, Version=14.0.0.0, Culture=neutral, PublicKeyToken=71e9bce111e9429c, processorArchitecture=MSIL">
+      <EmbedInteropTypes>True</EmbedInteropTypes>
+    </Reference>
+    <Reference Include="MySql.Data, Version=6.6.5.0, Culture=neutral, PublicKeyToken=c5687fc88969c44d, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>C:\Program Files (x86)\MySQL\Connector NET 6.6.5\Assemblies\v4.0\MySql.Data.dll</HintPath>
+    </Reference>
+    <Reference Include="MySql.Data.Entity, Version=6.6.5.0, Culture=neutral, PublicKeyToken=c5687fc88969c44d, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>C:\Program Files (x86)\MySQL\Connector NET 6.6.5\Assemblies\v4.0\MySql.Data.Entity.dll</HintPath>
+    </Reference>
+    <Reference Include="NHibernate, Version=3.3.1.4000, Culture=neutral, PublicKeyToken=aa95f207798dfdb4, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\packages\NHibernate.3.3.3.4000\lib\Net35\NHibernate.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.ComponentModel.DataAnnotations" />
+    <Reference Include="System.Configuration" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Data.Entity" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Deployment" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="CodiceFiscale.cs" />
+    <Compile Include="Domain\ListinoCorsi.cs" />
+    <Compile Include="Log.cs" />
+    <Compile Include="Printing.cs" />
+    <Compile Include="Windows\ViewIncassi.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Windows\ViewIncassi.Designer.cs">
+      <DependentUpon>ViewIncassi.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Windows\ViewLibroSoci.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Windows\ViewLibroSoci.Designer.cs">
+      <DependentUpon>ViewLibroSoci.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Windows\PanelIscrizione.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Windows\PanelIscrizione.Designer.cs">
+      <DependentUpon>PanelIscrizione.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Config.cs" />
+    <Compile Include="DB.cs" />
+    <Compile Include="DBImporter.cs" />
+    <Compile Include="Domain\Chiusura.cs" />
+    <Compile Include="Domain\Iscrizione.cs" />
+    <Compile Include="Domain\Corso.cs" />
+    <Compile Include="Domain\Istruttore.cs" />
+    <Compile Include="Domain\Persona.cs" />
+    <Compile Include="Domain\Stagione.cs" />
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Resources.resx</DependentUpon>
+    </Compile>
+    <Compile Include="Windows\SelezionaCorso.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Windows\SelezionaCorso.Designer.cs">
+      <DependentUpon>SelezionaCorso.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Windows\MainForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Windows\MainForm.Designer.cs">
+      <DependentUpon>MainForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="HibernateHelper.cs" />
+    <Compile Include="Program.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Utils.cs" />
+    <Compile Include="Windows\SelezionaIstruttore.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Windows\SelezionaIstruttore.Designer.cs">
+      <DependentUpon>SelezionaIstruttore.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Windows\ViewAnagrafica.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Windows\ViewAnagrafica.Designer.cs">
+      <DependentUpon>ViewAnagrafica.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Windows\ViewChiusura.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Windows\ViewChiusura.Designer.cs">
+      <DependentUpon>ViewChiusura.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Windows\ViewCorso.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Windows\ViewCorso.Designer.cs">
+      <DependentUpon>ViewCorso.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Windows\ViewIstruttore.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Windows\ViewIstruttore.Designer.cs">
+      <DependentUpon>ViewIstruttore.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Windows\ViewListino.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Windows\ViewListino.Designer.cs">
+      <DependentUpon>ViewListino.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Windows\ViewStagione.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Windows\ViewStagione.Designer.cs">
+      <DependentUpon>ViewStagione.cs</DependentUpon>
+    </Compile>
+    <EmbeddedResource Include="Windows\ViewIncassi.resx">
+      <DependentUpon>ViewIncassi.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Windows\ViewLibroSoci.resx">
+      <DependentUpon>ViewLibroSoci.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Windows\PanelIscrizione.resx">
+      <DependentUpon>PanelIscrizione.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Windows\SelezionaCorso.resx">
+      <DependentUpon>SelezionaCorso.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Windows\MainForm.resx">
+      <DependentUpon>MainForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <SubType>Designer</SubType>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Windows\SelezionaIstruttore.resx">
+      <DependentUpon>SelezionaIstruttore.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Windows\ViewAnagrafica.resx">
+      <DependentUpon>ViewAnagrafica.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Windows\ViewChiusura.resx">
+      <DependentUpon>ViewChiusura.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Windows\ViewCorso.resx">
+      <DependentUpon>ViewCorso.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Windows\ViewIstruttore.resx">
+      <DependentUpon>ViewIstruttore.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Windows\ViewListino.resx">
+      <DependentUpon>ViewListino.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Windows\ViewStagione.resx">
+      <DependentUpon>ViewStagione.cs</DependentUpon>
+    </EmbeddedResource>
+    <None Include="packages.config" />
+    <None Include="Properties\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </None>
+    <Compile Include="Properties\Settings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Settings.settings</DependentUpon>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="App.config">
+      <SubType>Designer</SubType>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="icon_shark.ico" />
+    <None Include="Resources\1405045943_cash3.png" />
+    <None Include="Resources\dollar-1.png" />
+    <None Include="Resources\euro-1.png" />
+    <None Include="Resources\euro.bmp" />
+    <EmbeddedResource Include="Mappings\ListinoCorsi.hbm.xml">
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <None Include="Resources\Icon1.ico" />
+    <None Include="Icons\icon_print.png" />
+    <None Include="Icons\icon_import.png" />
+    <None Include="Icons\icon_export.png" />
+    <None Include="Icons\icon_remove2.png" />
+    <None Include="Icons\icon_remove.png" />
+    <None Include="Icons\icon_save.png" />
+    <None Include="Icons\icon_refresh3.png" />
+    <None Include="Icons\icon_yetanotheradd.png" />
+    <None Include="Icons\icon_refresh2.png" />
+    <None Include="Icons\icon_blueadd.png" />
+    <None Include="Icons\icon_plus.png" />
+    <None Include="Icons\icon_ok.png" />
+    <None Include="Icons\icon_cancel.png" />
+    <None Include="Icons\icon_xls.gif" />
+    <None Include="Icons\icon_sync.png" />
+    <None Include="Icons\icon_refresh.png" />
+    <None Include="Icons\icon_newsearch2.png" />
+    <None Include="Icons\icon_newsearch.png" />
+    <None Include="Icons\icon_add.png" />
+    <None Include="bin\Debug\Resources\xls_icon.gif" />
+    <None Include="bin\Release\Resources\icon_refresh.png" />
+    <None Include="bin\Release\Resources\icon_add.png" />
+    <None Include="bin\Release\Resources\icon_newsearch.png" />
+    <Content Include="DB.sdf">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <EmbeddedResource Include="Mappings\Istruttore.hbm.xml">
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Mappings\Iscrizione.hbm.xml">
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Mappings\Chiusura.hbm.xml">
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Mappings\Stagione.hbm.xml" />
+    <EmbeddedResource Include="Mappings\Corso.hbm.xml">
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Mappings\Persona.hbm.xml">
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Hibernate.cfg.xml">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+  </ItemGroup>
+  <ItemGroup>
+    <BootstrapperPackage Include=".NETFramework,Version=v4.5">
+      <Visible>False</Visible>
+      <ProductName>Microsoft .NET Framework 4.5 %28x86 and x64%29</ProductName>
+      <Install>true</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Net.Client.3.5">
+      <Visible>False</Visible>
+      <ProductName>.NET Framework 3.5 SP1 Client Profile</ProductName>
+      <Install>false</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Net.Framework.3.5.SP1">
+      <Visible>False</Visible>
+      <ProductName>.NET Framework 3.5 SP1</ProductName>
+      <Install>false</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.SQL.Server.Compact.4.0">
+      <Visible>False</Visible>
+      <ProductName>SQL Server Compact 4.0 SP1</ProductName>
+      <Install>true</Install>
+    </BootstrapperPackage>
+  </ItemGroup>
+  <ItemGroup>
+    <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />
+  </ItemGroup>
+  <ItemGroup />
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

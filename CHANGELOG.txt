@@ -1,0 +1,130 @@
+TODO
+*2h	- ViewIstruttore: corsi che tiene
+*4h	- ViewIstruttore:stampa: mensile ore istruttori
+*1h	- ViewIstruttore:ore che farà questo mese
+*2h	- panelCosaSuccedeInPiscinaAlle:panel, grafica
+*2h	- panelCosaSuccedeInPiscinaAlle:messages
+*1h	- panelCosaSuccedeInPiscinaAlle:orologio
+*1h	- panelCosaSuccedeInPiscinaAlle:vai a $giorno:$ora
+*1h	- panelCosaSuccedeInPiscinaAlle:grafica aggiornata con persone presenti nei corsi, istruttori ecc.. doppio click su una corsia apre il corso
+---------------------------------------------------------------------------------------------------------------------------------------------
+-tab database, non si può guardare
+-viewCorso:colora iscritti che han terminato gli ingressi
+---------------------------------------------------------------------------------------------------------------------------------------------
+
+140725
+-save corso::non puoi aggiunge istruttori se prima non salvi il corso
+-saveIscrizione(8951bba7-4de2-4844-8284-da771300db15):not-null property references a null or transient value UNFHibernate.Domain.Iscrizione.persona
+-se cambi un listino a un corso, panel iscrizione continua a visualizzare l'importo stabilito, il cambio di listino non ha effetto
+-saveStagione(6517e51e-c162-4ed7-9480-c180c70491e8):Row was updated or deleted by another transaction (or unsaved-value mapping was incorrect): 
+-db::listino.add(corso), listino.del(corso)
+-db::stagione.add(corso), stagione.del(corso)
+
+
+
+140715
+- viewCorso:alcuni iscritti potrebbero aver finito gli ingressi, non contarli (colorare...)
+- persone::remove duplicati (solo chi non ha iscrizioni)
+- persona::countEmptyFields
+- iscrizione:data fine in panelIscrizione
+
+140711
+- stagione.add(chiusura), stagione.del(chiusura)
+
+140710
+- stampa incassi: template con data
+- stampa incassi: data
+- Polish:ordine tab
+- Polish:viewanagrafica
+- corretta chiusura di viewchiusure
+- icona stampa incassi
+- stampa cartellino: orario
+- stampa cartellino: dal ...AL!!
+- panelIscrizione:data fine
+
+140707
+- backup listini
+- Import:Persona
+- tutti gli import sono apposto
+- backup chiusura
+- backup corso
+- restore listini
+- restore chiusura
+- restore corso
+- backup iscrizioni
+- restore iscrizioni
+- togliere da corsi: giornate, importo
+- viewCorso:data fine calcolata giusta?
+
+
+140611
+- non sembra esserci un icona associata :)
+- stampa libro soci: partire con bottone stampa enabled=false. quando si settano le date enabled=true, freezare la lista e le date!
+- ANAGRAFICA PRINCIPALE: CHE CAZZO CI FA "DATA CERTIFICATO"?!?!?!?!?
+- ANAGRAFICA PRINCIPALE: ricerca per "iscritto a" non funziona con "primo corso"?!
+- ricerca: anagrafe, non saldati
+- iscrizione.importo possibilità di immettere qualsiasi, al momento dell'iscrizione (o se metti 0, torni a chiedere)
+- iscrizione.importo
+- Nuova stagione
+- cancella stagione corrente
+- setta saldato giusto
+- panelIscrizione:: dovuto ok
+- panelIscrizione:: ingressi combobox
+- panelIscrizione:: scegli gli ingressi, ti mostra fino a quando e il dovuto
+- Stampa pagamenti del giorno ok, manca solo <<Data Iscrizione>>
+- Stampa dovuto ok
+- Stampa cartellino ok
+- Stampa libro soci
+
+140609
+- Import:Chiusura
+
+140507
+- Orari: parse from to, corsie, tutto
+- Non puoi salvare un corso senza un listino
+- Se cerchi di salvare un corso senza un listino, da errore
+- parse Corso.orario -> aggiungi, rimuovi
+- ViewListino:design finestra, con la tabella (ingressi,prezzo)*
+- ViewListino: salva la tabella
+
+140503
+- ViewCorso::introdotte istanze
+
+140423
+- ViewListino: add, remove, show, save
+- migliorata la vista Configurazione
+- viewListino: vista
+- tab Listini e Chiusure
+- design: Corso::Orari // daylist:time-time(corsie). daylist=1[,2[,3...]]:h[mm]-h[mm](corsie).  corsie: 1,2,3,4 o 11,21 (seconda cifra 1:prima metà, 2:seconda metà, 3:primo quarto..)
+- ViewCorso: listini
+- ViewCorso coi tab { iscrizioni, orari, istruttori }
+- le iscrizioni vengono di nuovo salvate correttamente
+- design,codice,mapping: ListinoCorsi
+- un corso ha un listino (ListinoCorsi)
+- PanelIscrizione: data_rinuncia, tassaIscrizione, data_certificato
+
+140416
+- restyle ViewAnagrafica
+- restyle PanelIscrizione
+- ViewAnagrafica funziona e si visualizza correttamente
+
+140413
+- corso ha ora una stagione
+- chiusura ha ora una stagione
+- nuova stagione -> refresh corsi, stagioni
+- search corso: listbox con le stagioni
+- corso, listbox con le stagioni. quando crei un corso, di default stagione_corrente
+- chiusura, listbox con le stagioni. quando crei un chiusura, di default stagione_corrente
+- se non c'è una stagione corrente non puoi creare corsi/chiusure
+- quando crei una stagione, controlla se diventa la nuova stagione corrente
+
+140404
+- restore project in uno stato dignitoso
+- design Orari: [L][M][E][G][V][S][D]h[:mm]-h[:mm]1a2[;...]
+
+
+
+
+
+
+

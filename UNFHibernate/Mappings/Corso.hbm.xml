@@ -1,0 +1,35 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<hibernate-mapping xmlns="urn:nhibernate-mapping-2.2" assembly="UNFHibernate" namespace="UNFHibernate.Domain">
+  <class name="UNFHibernate.Domain.Corso">
+    <id name="ID">
+      <generator class="guid" />
+    </id>
+    <property name="Codice" />
+    <property name="Descrizione" />
+    <property name="Tipologia" />
+    <property name="DataInizio" />
+    <property name="DataFine" />
+    <property name="MaxIscritti" />
+    <property name="Attivo" />
+    <property name="CodiceStampa" />
+    <property name="TipoCartellino" />
+    
+    <property name="Orario" />
+    
+    <property name="Bimbi" />
+
+    <set name="Iscrizioni" cascade="all" inverse="true">
+      <key column="corsoID" />
+      <one-to-many class="Iscrizione"/>
+    </set>
+
+    <bag name="Istruttori"  >
+      <key column="ID" />
+      <many-to-many class="Istruttore"/>
+    </bag>
+
+    <many-to-one name="stagione" column="stagioneID" not-null="true" />
+    <many-to-one name="listino" column="listinoID" not-null="true" />
+    
+  </class>
+</hibernate-mapping>
